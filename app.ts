@@ -17,5 +17,5 @@ app.use((err: ValidationError, req: Request, res: Response) => { // application 
 })
 
 app.listen(process.env.PORT, () => {
-    return console.log(`GenerAPI is listening at PORT ${process.env.PORT}`);
+    return console.log(`GenerAPI is listening at PORT ${process.env.PORT} :)`);
 });
