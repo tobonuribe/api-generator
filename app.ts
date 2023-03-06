@@ -7,12 +7,11 @@ import routes from './controllers/routes';
 import { ValidationError } from 'express-validation';
 
 const app = express();
-
 app.use(cors(corsOptions)); // application middleware
 app.use(express.json());
-app.use(routes); 
+app.use(routes);
 
-app.use((err: ValidationError, req: Request, res: Response) => { // application Error handler middleware 
+app.use((err: ValidationError, req: Request, res: Response) => { // Error handler application middleware 
     return res.status(err.statusCode).json(err);
 })
 
