@@ -26,11 +26,15 @@ export class Quarkus {
                     package_1: this.appPackage[0],
                     package_2: this.appPackage[1],
                     package_3: this.appPackage[2],
+                    methods: 'get,post'
                 },
                 render: mustache.render
             }).copy('./templates/quarkus', `./outputs`)
                 .then((res) => resolve(res))
                 .catch((err: Error) => reject(err));
+
+        //fs.mkdirSync(`${this.mainPath}/java/${this.appPackage}/${this.appName.toLowerCase()}/application/${this.version}`, { recursive: true })
+        //fs.mkdirSync(`${this.mainPath}/resources`, { recursive: true })
         });
     }
 }
