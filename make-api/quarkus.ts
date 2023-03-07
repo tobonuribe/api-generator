@@ -16,6 +16,7 @@ export class Quarkus {
         this.version = `v${(this.body.swagger.info.version).split(".")[0]}`;
     }
 
+    // para los modelos instanciar varias veces el scaffold sobre el modelo plantilla
     public makeQuarkusProject() {
         return new Promise((resolve, reject) => {
             new Scaffold({
