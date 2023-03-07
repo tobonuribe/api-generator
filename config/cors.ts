@@ -1,4 +1,9 @@
-export const corsOptions = {
-    origin: 'https://localhost:8081',
+interface Cors {
+    origin: string;
+    methods: string;
+}
+
+export const corsOptions: Cors = {
+    origin: 'http://localhost',
     methods: 'POST, GET'
 }
