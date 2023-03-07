@@ -1,9 +1,8 @@
-import { Request, Response } from 'express';
+import { Request, Response, NextFunction } from 'express';
 
-const zipHeaders = (req: Request, res: Response, next) => {
-    const fileName = Date.now();
-    res.setHeader('Content-Type', 'application/octet-stream');
-    res.setHeader('Content-Disposition', `attachment; filename=${fileName}.zip`);
+const zipHeaders = (req: Request, res: Response, next: NextFunction) => {
+    res.setHeader('Content-Type', 'application/zip');
+    res.setHeader('Content-Disposition', `attachment; filename=${req.body.data.swagger.info.title}.zip`);
     next();
 } 
 
